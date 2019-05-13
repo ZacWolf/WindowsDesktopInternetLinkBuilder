@@ -1,0 +1,15 @@
+<project>
+	<property name="dist" location="Z:\_DEV\OS_WINDOWS\9_MISC_TOOLS\JSmooth 0.9.9-7"/>
+	<taskdef name="jsmoothgen"
+	     classname="net.charabia.jsmoothgen.ant.JSmoothGen"
+	     classpath="${dist}\lib\jsmoothgen-ant.jar"/>
+	<target name="jar">
+        <jar destfile="LinkMaker.jar" basedir="bin">
+            <manifest>
+                <attribute name="Main-Class" value="com.zacwolf.linkmaker.ui.Application"/>
+            </manifest>
+        </jar>
+		
+		<jsmoothgen project="LinkMaker.exe.jsmooth" skeletonroot="${dist}\skeletons"/>
+    </target>
+</project>
